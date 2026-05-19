@@ -15,6 +15,18 @@ const CARDS = [
     value: 'gediontilahun17@gmail.com',
     href: 'mailto:gediontilahun17@gmail.com',
   },
+  {
+    icon: FiArrowUpRight,
+    label: 'Instagram',
+    value: '@_geda_til_',
+    href: 'https://www.instagram.com/_geda_til_?igsh=ZG55OWxuZHVnNXFw',
+  },
+  {
+    icon: FiArrowUpRight,
+    label: 'LinkedIn',
+    value: 'Gedion Gizaw',
+    href: 'https://www.linkedin.com/in/gedion-gizaw-693512267',
+  },
 ]
 
 export default function Contact() {
@@ -25,6 +37,8 @@ export default function Contact() {
           <motion.a
             key={c.label}
             href={c.href}
+            target="_blank"
+            rel="noopener noreferrer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -33,18 +47,22 @@ export default function Contact() {
             className="glow-border glass group relative overflow-hidden rounded-3xl p-9"
           >
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gold/10 blur-3xl transition-all duration-500 group-hover:bg-gold/20" />
+
             <div className="relative flex items-center justify-between">
               <div>
                 <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-gold/20 to-violet/20">
                   <c.icon className="text-2xl text-gold" />
                 </div>
+
                 <p className="mt-6 font-display text-xs tracking-[0.3em] text-white/40">
                   {c.label.toUpperCase()}
                 </p>
+
                 <p className="mt-2 font-display text-lg text-white sm:text-xl">
                   {c.value}
                 </p>
               </div>
+
               <FiArrowUpRight className="text-2xl text-white/30 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-gold" />
             </div>
           </motion.a>
