@@ -53,36 +53,36 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Powered By Codyza */}
+      {/* FUTURISTIC TOP BAR */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="fixed top-4 left-1/2 -translate-x-1/2 z-[80] w-[92%] max-w-md"
+        className="fixed top-3 left-1/2 -translate-x-1/2 z-[80] w-[95%] max-w-sm"
       >
-        <div className="glass flex items-center justify-between rounded-full border border-white/10 bg-white/[0.03] px-4 py-3 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.45)]">
+        <div className="glass flex items-center rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 backdrop-blur-2xl shadow-[0_8px_40px_rgba(0,0,0,0.45)]">
           
-          {/* LEFT */}
+          {/* LEFT BRANDING */}
           <a
             href="https://codyza.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-3"
+            className="flex items-center gap-2"
           >
             <img
               src="/codyza.png"
               alt="Codyza"
-              className="h-9 w-9 rounded-xl object-cover"
+              className="h-8 w-8 rounded-xl object-cover"
             />
 
-            <div className="flex items-center gap-2">
-              <span className="text-sm md:text-base font-medium tracking-wide text-[#7dd3fc]">
+            <div className="flex items-center gap-1">
+              <span className="text-xs font-medium tracking-wide text-cyan-300">
                 codyza.com
               </span>
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 text-[#7dd3fc]"
+                className="h-3 w-3 text-cyan-300"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -97,18 +97,18 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* RIGHT SMALL 3 DOT */}
+          {/* TINY MENU DOTS */}
           <button
             aria-label="Menu"
             onClick={() => setOpen((o) => !o)}
-            className="flex items-center gap-1.5"
+            className="ml-auto flex items-center gap-1"
           >
             {[0, 1, 2].map((i) => (
               <motion.span
                 key={i}
-                className="block h-2 w-2 rounded-full bg-cyan-400"
+                className="block h-1 w-1 rounded-full bg-cyan-300"
                 animate={{
-                  y: [0, -2, 0],
+                  y: [0, -1.5, 0],
                   opacity: [1, 0.5, 1],
                 }}
                 transition={{
@@ -130,7 +130,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.96 }}
             transition={{ duration: 0.3 }}
-            className="glass fixed top-24 left-1/2 z-[70] flex w-[92%] max-w-md -translate-x-1/2 flex-col gap-1 rounded-2xl p-3 md:hidden"
+            className="glass fixed top-20 left-1/2 z-[70] flex w-[95%] max-w-sm -translate-x-1/2 flex-col gap-1 rounded-2xl p-3 md:hidden"
           >
             {LINKS.map((l, i) => (
               <motion.button
@@ -139,7 +139,7 @@ export default function Navbar() {
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.05 }}
-                className={`rounded-xl px-4 py-3 text-left font-display text-sm transition-colors ${
+                className={`rounded-xl px-4 py-3 text-left text-sm transition-colors ${
                   active === l.id
                     ? 'bg-white/5 text-cyan-300'
                     : 'text-white/65 hover:bg-white/5'
